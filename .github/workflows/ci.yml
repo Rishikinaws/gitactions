@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a script
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Check index.html
+        run: |
+          echo "Checking website file..."
+          test -f index.html
+          echo "index.html exists successfully!"
